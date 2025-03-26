@@ -299,7 +299,7 @@ namespace StbImageSharp
 				var yorig = stackalloc int[] { 0, 0, 4, 0, 2, 0, 1 };
 				var xspc = stackalloc int[] { 8, 8, 4, 4, 2, 2, 1 };
 				var yspc = stackalloc int[] { 8, 8, 8, 4, 4, 2, 2 };
-				#pragma warning enable CA2014
+				#pragma warning restore CA2014
 				// End Fumen Modification
 				var i = 0;
 				var j = 0;
