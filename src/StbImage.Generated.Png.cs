@@ -292,10 +292,15 @@ namespace StbImageSharp
 				return stbi__err("outofmem");
 			for (p = 0; p < 7; ++p)
 			{
+				// Begin Fumen Modification
+				// These stackalloc calls are in a very small loop and do not run any risk of stack overflow.
+				#pragma warning disable CA2014
 				var xorig = stackalloc int[] { 0, 4, 0, 2, 0, 1, 0 };
 				var yorig = stackalloc int[] { 0, 0, 4, 0, 2, 0, 1 };
 				var xspc = stackalloc int[] { 8, 8, 4, 4, 2, 2, 1 };
 				var yspc = stackalloc int[] { 8, 8, 8, 4, 4, 2, 2 };
+				#pragma warning enable CA2014
+				// End Fumen Modification
 				var i = 0;
 				var j = 0;
 				var x = 0;
